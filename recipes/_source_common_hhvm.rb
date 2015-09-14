@@ -9,7 +9,6 @@ git 'hhvm' do
   reference node['hhvm']['source']['hhvm_revision']
   destination hhvm_src
   enable_submodules true
-  depth 50
   action :sync
   if node['platform'] == "Ubuntu" and node['platform_version'].to_f <= 14.04
     notifies :run, 'execute[libevent-clean]', :immediately
