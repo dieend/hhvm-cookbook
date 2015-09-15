@@ -30,7 +30,7 @@ execute 'hhvm-cmake' do
 end
 
 execute 'hhvm-make' do
-  command "make -j #{node['hhvm']['source']['make_jobs'].to_s} && make install"
+  command "make -j #{node['hhvm']['source']['make_jobs'].to_s} && make install && /usr/bin/update-alternatives --install /usr/bin/php php /usr/local/bin/hhvm 60"
   cwd hhvm_src
   environment (env)
   timeout 14400
