@@ -33,6 +33,7 @@ execute 'hhvm-make' do
   command "make -j #{node['hhvm']['source']['make_jobs'].to_s} && make install"
   cwd hhvm_src
   environment (env)
+  timeout 14400
   creates '/usr/local/bin/hhvm'
   action :nothing
 end
