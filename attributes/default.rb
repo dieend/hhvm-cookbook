@@ -66,3 +66,5 @@ default['hhvm']['source']['dependencies']['debian'][7.4] = [
 
 default['hhvm']['source']['layout']['working_dir'] = '/usr/src'
 default['hhvm']['source']['layout']['prefix'] = '/usr'
+
+include_attribute "hhvm::config"
